@@ -1,0 +1,109 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        // "CMake Generate"
+        {
+            "taskName": "CMake Generate",
+            "type": "shell",
+            "windows": {
+                "command": "C:\\Program Files (x86)\\Cmake\\bin\\cmake.exe",
+                "options": {
+                    "cwd": "${workspaceRoot}\\build"
+                },
+                "args": [
+                    "-G \"Visual Studio 14 2015 amd64\"",
+                    "../"
+                ]
+            },
+            "linux": {
+                "command": "cmake",
+                "options": {
+                    "cwd": "${workspaceRoot}/build"
+                },
+                "args": [
+                    "../"
+                ]
+            },
+            "osx": {
+                "command": "cmake",
+                "options": {
+                    "cwd": "${workspaceRoot}/build"
+                },
+                "args": [
+                    "../"
+                ]
+            },
+            "group": "build",
+            "presentation": {
+                // Reveal the output only if unrecognized errors occur.
+                "reveal": "silent"
+            }
+        },
+        // "CMake Build"
+        {
+            "taskName": "CMake Build",
+            "type": "shell",
+            "windows": {
+                "command": "C:\\Program Files (x86)\\Cmake\\bin\\cmake.exe",
+                "options": {
+                    "cwd": "${workspaceRoot}\\build"
+                }
+            },
+            "linux": {
+                "command": "cmake",
+                "options": {
+                    "cwd": "${workspaceRoot}/build"
+                }
+            },
+            "osx": {
+                "command": "cmake",
+                "options": {
+                    "cwd": "${workspaceRoot}/build"
+                }
+            },
+            "args": [
+                "--build ."
+            ],
+            "group": "build",
+            "presentation": {
+                // Reveal the output only if unrecognized errors occur.
+                "reveal": "silent"
+            },
+            "problemMatcher" : []
+        },
+        // "CMake Clean"
+        {
+            "taskName": "CMake Clean",
+            "type": "shell",
+            "windows": {
+                "command": "C:\\Program Files (x86)\\Cmake\\bin\\cmake.exe",
+                "options": {
+                    "cwd": "${workspaceRoot}\\build"
+                }
+            },
+            "linux": {
+                "command": "cmake",
+                "options": {
+                    "cwd": "${workspaceRoot}/build"
+                }
+            },
+            "osx": {
+                "command": "cmake",
+                "options": {
+                    "cwd": "${workspaceRoot}/build"
+                }
+            },
+            "args": [
+                "--build . --target 'clean'"
+            ],
+            "group": "build",
+            "presentation": {
+                // Reveal the output only if unrecognized errors occur.
+                "reveal": "silent"
+            },
+            "problemMatcher" : []
+        }
+    ]
+}
